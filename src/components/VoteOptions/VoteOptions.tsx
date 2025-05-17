@@ -3,10 +3,10 @@ import type { VoteType } from '../../types/votes';
 interface VoteOptionsProps {
   onVote: (type: VoteType) => void;
   onReset: () => void;
-  canResest: boolean;
+  canReset: boolean;
 }
 
-export default function VoteOptions({ onVote, onReset, canResest }: VoteOptionsProps) {
+export default function VoteOptions({ onVote, onReset, canReset }: VoteOptionsProps) {
   return (
     <>
       <div className={css.container}>
@@ -19,7 +19,7 @@ export default function VoteOptions({ onVote, onReset, canResest }: VoteOptionsP
         <button onClick={() => onVote('bad')} className={css.button}>
           Bad
         </button>
-        {canResest && (
+        {canReset && (
           <button onClick={onReset} className={`${css.button} ${css.reset}`}>
             Reset
           </button>
